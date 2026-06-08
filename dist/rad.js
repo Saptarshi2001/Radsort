@@ -2,23 +2,20 @@ export function rxsort(arr) {
     if (arr.length == 0) {
         return [];
     }
-    let expPrefix = new Map();
-    let queue = [];
+    let result = arr;
     let output = [];
     let maxNumArr = Math.max(...arr);
     let exp = 1;
     let prefixSum = Array(10).fill(0);
     let freqArr = Array(10).fill(0);
-    let finalOutput = [];
     while (maxNumArr > 0) {
-        queue.push(exp);
-        freqArr = countFreq(arr, exp);
-        prefixSum = calPrefixSum(freqArr, exp, expPrefix);
+        freqArr = countFreq(result, exp);
+        prefixSum = calPrefixSum(freqArr);
+        result = finalArr(result, prefixSum, exp);
         exp *= 10;
         maxNumArr = Math.floor(maxNumArr / 10);
     }
-    finalOutput = finalArr(arr, queue, expPrefix);
-    output = finalOutput;
+    output = result;
     return output;
 }
 function countFreq(arr, exp) {
@@ -36,7 +33,7 @@ function countFreq(arr, exp) {
     }
     return arrFreq;
 }
-function calPrefixSum(freqArr, exp, expPrefix) {
+function calPrefixSum(freqArr) {
     if (freqArr.length == 0) {
         return [];
     }
@@ -46,25 +43,14 @@ function calPrefixSum(freqArr, exp, expPrefix) {
     for (let j = 1; j < n; j++) {
         prefixSum[j] = prefixSum[j - 1] + freqArr[j];
     }
-    expPrefix.set(exp, prefixSum);
     return prefixSum;
 }
-function finalArr(arr, queue, expPrefix) {
+function finalArr(arr, prefixSum, exp) {
     if (arr.length == 0) {
         return [];
     }
-    if (queue.length == 0) {
-        return [];
-    }
     let outputArr = Array(arr.length).fill(0);
-    let exp = queue.shift();
-    let prefSum = expPrefix.get(exp);
-    let finalArr = calculateArr(prefSum, arr, exp);
-    while (queue.length != 0) {
-        exp = queue.shift();
-        prefSum = expPrefix.get(exp);
-        finalArr = calculateArr(prefSum, finalArr, exp);
-    }
+    let finalArr = calculateArr(prefixSum, arr, exp);
     outputArr = finalArr;
     return outputArr;
 }
