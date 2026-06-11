@@ -1,46 +1,42 @@
-# Radsort Unit Test Report
+# Radsort
 
-## Test setup
+Small radix sort library built with TypeScript. Ideal for sorting arrays of
+non-negative integers.
 
-- Added unit tests for the exported `rxsort` function in `tests/rad.test.mjs`.
-- Updated `package.json` so `npm test` builds the TypeScript output and runs Node's built-in test runner.
-- `src/rad.ts` was not changed.
+## Installation
 
-## Command run
+Install dependencies:
 
-```powershell
-npm.cmd test
+```bash
+npm install radsort
 ```
 
-Note: `npm test` and `npx` are blocked in this PowerShell session by the local script execution policy, so `npm.cmd test` was used instead.
+## Usage
 
-## Test results
+Import `rxsort` from the package:
 
-- Total tests: 5
-- Passing tests: 2
-- Failing tests: 3
+```js
+import { rxsort } from "radsort";
 
-## Passing unit tests
+const values = [170, 45, 75, 90, 802, 24, 2, 66];
+const sorted = rxsort(values);
 
-- `rxsort` returns an empty array for an empty input.
-- `rxsort` does not mutate the input array.
+console.log(sorted);
+// [2, 24, 45, 66, 75, 90, 170, 802]
+```
 
-## Failing unit tests
+## For building from source
 
-### `rxsort` sorts single-digit positive numbers in ascending order
+```
+git clone https://github.com/Saptarshi2001/Radsort.git
+npm run build
+npm test
 
-- Input: `[3, 1, 2]`
-- Expected: `[1, 2, 3]`
-- Actual: `[]`
+```
 
-### `rxsort` sorts multi-digit positive numbers in ascending order
+## Current Test Status
 
-- Input: `[170, 45, 75, 90, 802, 24, 2, 66]`
-- Expected: `[2, 24, 45, 66, 75, 90, 170, 802]`
-- Actual: `[]`
+The test suite currently passes and covers empty inputs, sorted output,
+duplicate preservation, and input immutability.
 
-### `rxsort` preserves duplicate values while sorting
 
-- Input: `[5, 3, 5, 1, 3]`
-- Expected: `[1, 3, 3, 5, 5]`
-- Actual: `[]`
