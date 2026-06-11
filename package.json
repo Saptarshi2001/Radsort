@@ -2,16 +2,43 @@
   "name": "radsort",
   "version": "1.0.0",
   "type": "module",
-  "main": "index.js",
+  "description": "radix sort library in typescript",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.MD"
+  ],
   "scripts": {
     "build": "tsc --pretty false",
     "test": "npm run build && node --test tests/*.test.mjs"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "keywords": [
+    "radix-sort",
+    "sort",
+    "typescript",
+    "algorithm"
+  ],
+  "author": "Saptarshi Dutta",
+  "license": "MIT",
   "devDependencies": {
     "typescript": "^6.0.3"
-  }
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Saptarshi2001/Radsort.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Saptarshi2001/Radsort/issues"
+  },
+  "homepage": "https://github.com/Saptarshi2001/Radsort#readme"
 }
