@@ -1,6 +1,6 @@
 # Radsort
 
-Small radix sort library built with TypeScript. Ideal for sorting arrays of
+Small radix sort library built with TypeScript. Ideal for sorting small arrays of
 non-negative integers.
 
 ## Installation
