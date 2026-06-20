@@ -6,7 +6,10 @@ export function rxsort(arr:number[]) : number[]{
     }
     let result:number[]=arr;
     let output:number[]=[];
-    let maxNumArr:number=Math.max(...arr);
+    let maxNumArr:number=arr.reduce((max,current)=>{
+        return current>max?current:max;
+    },-Infinity);
+    //let maxNumArr:number=Math.max(...arr);
     let exp: number=1;
     let prefixSum:number[]=Array(10).fill(0);
     let freqArr:number[]=Array(10).fill(0);
