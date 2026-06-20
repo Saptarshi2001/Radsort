@@ -1,0 +1,20 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.9.2
+2 info using node@v22.17.1
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:D:\Typescript\Radsort\.npmrc
+5 silly config load:file:C:\Users\SAPTARSHI DUTTA\.npmrc
+6 silly config load:file:C:\Users\SAPTARSHI DUTTA\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm pack
+8 verbose argv "pack" "--dry-run" "--json" "--cache" ".npm-cache"
+9 verbose logfile logs-max:10 dir:D:\Typescript\Radsort\.npm-cache\_logs\2026-06-20T11_12_37_853Z-
+10 verbose logfile D:\Typescript\Radsort\.npm-cache\_logs\2026-06-20T11_12_37_853Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+13 http fetch GET https://registry.npmjs.org/npm attempt 1 failed with EACCES
+14 verbose cwd D:\Typescript\Radsort
+15 verbose os Windows_NT 10.0.26200
+16 verbose node v22.17.1
+17 verbose npm  v10.9.2
+18 verbose exit 0
+19 info ok

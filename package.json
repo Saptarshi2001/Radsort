@@ -1,6 +1,6 @@
 {
   "name": "radsort",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "description": "radix sort library in typescript",
   "main": "./dist/index.js",
@@ -13,11 +13,14 @@
   },
   "files": [
     "dist",
+    "benchmarks",
     "README.MD"
   ],
   "scripts": {
     "build": "tsc --pretty false",
-    "test": "npm run build && node --test tests/*.test.mjs"
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "benchmark": "node benchmarks/benchmark.mjs",
+    "benchmark:quick": "node benchmarks/benchmark.mjs --quick"
   },
   "keywords": [
     "radix-sort",
@@ -28,6 +31,7 @@
   "author": "Saptarshi Dutta",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^25.9.3",
     "typescript": "^6.0.3"
   },
   "directories": {

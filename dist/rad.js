@@ -4,7 +4,10 @@ export function rxsort(arr) {
     }
     let result = arr;
     let output = [];
-    let maxNumArr = Math.max(...arr);
+    let maxNumArr = arr.reduce((max, current) => {
+        return current > max ? current : max;
+    }, -Infinity);
+    //let maxNumArr:number=Math.max(...arr);
     let exp = 1;
     let prefixSum = Array(10).fill(0);
     let freqArr = Array(10).fill(0);
